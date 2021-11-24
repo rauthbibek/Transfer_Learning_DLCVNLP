@@ -6,7 +6,7 @@ from src.utils.common import read_yaml, create_directories
 import random
 import tensorflow as tf
 import numpy as np
-
+import io
 
 STAGE = "creating base model" ## <<< change stage name 
 
@@ -53,7 +53,14 @@ def main(config_path):
     METRICS = ["accuracy"]
     model.compile(loss=LOSS, optimizer=OPTIMIZER, metrics=METRICS)
 
-    model.summary()
+    def _log_model_summary(full_model):
+        with io.StringIO() as stream:
+            full_model.summary(print_fn=lambda x: stream.write(f"{x}\n"))
+            summary_str = stream.getvalue()
+        return summary_str
+
+    logging.info(f"full model summary: \n{_log_model_summary(model)}")
+    #model.summary()
 
 if __name__ == '__main__':
     args = argparse.ArgumentParser()

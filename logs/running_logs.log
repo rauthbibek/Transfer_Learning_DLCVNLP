@@ -49,3 +49,32 @@ TypeError: Invalid keyword argument(s) in `compile()`: ({'metric'},). Valid keyw
 [2021-11-24 19:25:06,748: INFO: common]: yaml file: configs/config.yaml loaded successfully
 [2021-11-24 19:25:07,709: INFO: 01_base_model_creation]: >>>>> stage creating base model completed!<<<<<
 
+[2021-11-24 19:32:25,795: INFO: 01_base_model_creation]: 
+********************
+[2021-11-24 19:32:25,795: INFO: 01_base_model_creation]: >>>>> stage creating base model started <<<<<
+[2021-11-24 19:32:25,796: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2021-11-24 19:32:26,706: INFO: 01_base_model_creation]: full model summary: 
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ inputLayer (Flatten)        (None, 784)               0         
+                                                                 
+ hiddenLayer1 (Dense)        (None, 300)               235500    
+                                                                 
+ leaky_re_lu (LeakyReLU)     (None, 300)               0         
+                                                                 
+ hiddenLayer2 (Dense)        (None, 100)               30100     
+                                                                 
+ leaky_re_lu_1 (LeakyReLU)   (None, 100)               0         
+                                                                 
+ outputLayer (Dense)         (None, 10)                1010      
+                                                                 
+=================================================================
+Total params: 266,610
+Trainable params: 266,610
+Non-trainable params: 0
+_________________________________________________________________
+
+[2021-11-24 19:32:26,738: INFO: 01_base_model_creation]: >>>>> stage creating base model completed!<<<<<
+
