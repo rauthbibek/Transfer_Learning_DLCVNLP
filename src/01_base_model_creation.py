@@ -59,8 +59,26 @@ def main(config_path):
             summary_str = stream.getvalue()
         return summary_str
 
-    logging.info(f"full model summary: \n{_log_model_summary(model)}")
+    logging.info(f"base model summary: \n{_log_model_summary(model)}")
     #model.summary()
+
+    ## Train the model
+    history = model.fit(X_train, y_train, epochs = 10, validation_data =(X_valid, y_valid),
+    verbose = 2 )
+
+    ## Save the model
+    model_dir_path = os.path.join("artifacts","models")
+    create_directories([model_dir_path])
+
+    model_file_path = os.path.join(model_dir_path, "base_model.h5")
+    model.save(model_file_path)
+
+    logging.info(f"base model saved at {model_file_path}")
+    logging.info(f"evaluation metrics {model.evaluate(X_test, y_test)}")
+
+
+
+
 
 if __name__ == '__main__':
     args = argparse.ArgumentParser()
