@@ -261,3 +261,123 @@ _________________________________________________________________
 [2021-11-25 20:43:09,198: INFO: 02_transfer_even_odd]: evaluation metrics [0.29125532507896423, 0.8795999884605408]
 [2021-11-25 20:43:09,237: INFO: 02_transfer_even_odd]: >>>>> stage transfer model completed!<<<<<
 
+[2021-11-25 20:59:28,894: INFO: 03_transfer_learning_less_than_5]: 
+********************
+[2021-11-25 20:59:28,894: INFO: 03_transfer_learning_less_than_5]: >>>>> stage transfer learning started <<<<<
+[2021-11-25 20:59:28,894: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2021-11-25 20:59:30,455: INFO: 03_transfer_learning_less_than_5]: loaded base model summary: 
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ inputLayer (Flatten)        (None, 784)               0         
+                                                                 
+ hiddenLayer1 (Dense)        (None, 300)               235500    
+                                                                 
+ leaky_re_lu (LeakyReLU)     (None, 300)               0         
+                                                                 
+ hiddenLayer2 (Dense)        (None, 100)               30100     
+                                                                 
+ leaky_re_lu_1 (LeakyReLU)   (None, 100)               0         
+                                                                 
+ outputLayer (Dense)         (None, 10)                1010      
+                                                                 
+=================================================================
+Total params: 266,610
+Trainable params: 266,610
+Non-trainable params: 0
+_________________________________________________________________
+
+[2021-11-25 20:59:30,483: INFO: 03_transfer_learning_less_than_5]: new model summary: 
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ inputLayer (Flatten)        (None, 784)               0         
+                                                                 
+ hiddenLayer1 (Dense)        (None, 300)               235500    
+                                                                 
+ leaky_re_lu (LeakyReLU)     (None, 300)               0         
+                                                                 
+ hiddenLayer2 (Dense)        (None, 100)               30100     
+                                                                 
+ leaky_re_lu_1 (LeakyReLU)   (None, 100)               0         
+                                                                 
+ output_Layer (Dense)        (None, 2)                 202       
+                                                                 
+=================================================================
+Total params: 265,802
+Trainable params: 202
+Non-trainable params: 265,600
+_________________________________________________________________
+
+[2021-11-25 20:59:56,577: ERROR: 03_transfer_learning_less_than_5]: [Errno 22] Unable to create file (unable to open file: name = 'artifacts\models\less>5_model.h5', errno = 22, error message = 'Invalid argument', flags = 13, o_flags = 302)
+Traceback (most recent call last):
+  File "src/03_transfer_learning_less_than_5.py", line 100, in <module>
+    main(config_path=parsed_args.config)
+  File "src/03_transfer_learning_less_than_5.py", line 84, in main
+    new_model.save(model_file_path)
+  File "D:\DLCVNLP\New folder\Transfer_Learning_DLCVNLP\env\lib\site-packages\keras\utils\traceback_utils.py", line 67, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "D:\DLCVNLP\New folder\Transfer_Learning_DLCVNLP\env\lib\site-packages\h5py\_hl\files.py", line 507, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+  File "D:\DLCVNLP\New folder\Transfer_Learning_DLCVNLP\env\lib\site-packages\h5py\_hl\files.py", line 226, in make_fid
+    fid = h5f.create(name, h5f.ACC_TRUNC, fapl=fapl, fcpl=fcpl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 126, in h5py.h5f.create
+OSError: [Errno 22] Unable to create file (unable to open file: name = 'artifacts\models\less>5_model.h5', errno = 22, error message = 'Invalid argument', flags = 13, o_flags = 302)
+[2021-11-25 21:01:33,950: INFO: 03_transfer_learning_less_than_5]: 
+********************
+[2021-11-25 21:01:33,950: INFO: 03_transfer_learning_less_than_5]: >>>>> stage transfer learning started <<<<<
+[2021-11-25 21:01:33,951: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2021-11-25 21:01:35,437: INFO: 03_transfer_learning_less_than_5]: loaded base model summary: 
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ inputLayer (Flatten)        (None, 784)               0         
+                                                                 
+ hiddenLayer1 (Dense)        (None, 300)               235500    
+                                                                 
+ leaky_re_lu (LeakyReLU)     (None, 300)               0         
+                                                                 
+ hiddenLayer2 (Dense)        (None, 100)               30100     
+                                                                 
+ leaky_re_lu_1 (LeakyReLU)   (None, 100)               0         
+                                                                 
+ outputLayer (Dense)         (None, 10)                1010      
+                                                                 
+=================================================================
+Total params: 266,610
+Trainable params: 266,610
+Non-trainable params: 0
+_________________________________________________________________
+
+[2021-11-25 21:01:35,465: INFO: 03_transfer_learning_less_than_5]: new model summary: 
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ inputLayer (Flatten)        (None, 784)               0         
+                                                                 
+ hiddenLayer1 (Dense)        (None, 300)               235500    
+                                                                 
+ leaky_re_lu (LeakyReLU)     (None, 300)               0         
+                                                                 
+ hiddenLayer2 (Dense)        (None, 100)               30100     
+                                                                 
+ leaky_re_lu_1 (LeakyReLU)   (None, 100)               0         
+                                                                 
+ output_Layer (Dense)        (None, 2)                 202       
+                                                                 
+=================================================================
+Total params: 265,802
+Trainable params: 202
+Non-trainable params: 265,600
+_________________________________________________________________
+
+[2021-11-25 21:01:57,946: INFO: 03_transfer_learning_less_than_5]: transfer model saved at artifacts\models\less_than_5_model.h5
+[2021-11-25 21:01:58,465: INFO: 03_transfer_learning_less_than_5]: evaluation metrics [0.3234008550643921, 0.8700000047683716]
+[2021-11-25 21:01:58,501: INFO: 03_transfer_learning_less_than_5]: >>>>> stage transfer learning completed!<<<<<
+
