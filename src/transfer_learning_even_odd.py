@@ -8,7 +8,7 @@ import tensorflow as tf
 import numpy as np
 import io
 
-STAGE = "base model creation" ## <<< change stage name 
+STAGE = "transfer learning" ## <<< change stage name 
 
 logging.basicConfig(
     filename=os.path.join("logs", 'running_logs.log'), 
@@ -17,6 +17,8 @@ logging.basicConfig(
     filemode="a"
     )
 
+def update_even_odd_labels(list_of_labels):
+    pass
 
 def main(config_path):
     ## read config files
